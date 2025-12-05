@@ -3,28 +3,42 @@
 
 <head>
     <style>
-        div {
-            width: 300px;
-            height: 300px;
-            background-color: orange;
-            border: 1px solid blue;
+        .box {
+            width: 120px;
+            height: 40px;
+            background: lightblue;
+            margin: 10px;
+            padding: 10px
         }
 
-        #mydiv {
-            transform: rotate(180deg)
+        .rel {
+            position: relative;
+            top: 20px;
+            left: 20px;
+            background: lightgreen
+        }
+
+        .abs {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: orange
+        }
+
+        .fix {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: tomato
         }
     </style>
 </head>
 
 <body>
-    <h1>Welcome To The World Of Coding</h1>
-    <p>Ready to learn the rotate method...</p>
-    <div>
-        codingal
-    </div>
-    <div id="mydiv">
-        codingal
-    </div>
+    <div class="box">Static</div>
+    <div class="box rel">Relative</div>
+    <div class="box abs">Absolute</div>
+    <div class="box fix">Fixed</div>
 </body>
 
 </html>
