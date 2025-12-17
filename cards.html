@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Anime Dark Theme</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: radial-gradient(circle at top, #1a1a40, #000);
+            color: white;
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: rgba(0, 0, 0, .8);
+            backdrop-filter: blur(8px);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* CARDS */
+        .card {
+            background: black;
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: .6s;
+        }
+
+        .card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(138, 43, 226, .7);
+        }
+
+        .card-img-top {
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            background: black;
+            color: white;
+        }
+
+        /* BUTTONS */
+        .btn {
+            border-radius: 30px;
+        }
+
+        /* MODAL */
+        .modal-content {
+            background: #0f0f2d;
+            color: white;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" width="40"> AnimeZone
+            </a>
+        </div>
+    </nav>
+
+    <div class="container pt-5 mt-5">
+        <h2 class="text-center mb-5">🔥 My Favourite World 🔥</h2>
+
+        <div class="row">
+
+            <!-- CARD TEMPLATE -->
+            <div class="col-md-4 col-lg-3 mb-4">
+                <div class="card">
+                    <img src="naruto.jpg" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5>Naruto</h5>
+                        <p>Favourite Anime</p>
+                        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#naruto">Read
+                            More</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3 mb-4">
+                <div class="card">
+                    <img src="bloxfuits.jpg" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5>Blox Fruits</h5>
+                        <p>Favourite Game</p>
+                        <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#blox">Read More</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3 mb-4">
+                <div class="card">
+                    <img src="cricket.jpg" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5>Cricket</h5>
+                        <p>Outdoor Game</p>
+                        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#cricket">Read
+                            More</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3 mb-4">
+                <div class="card">
+                    <img src="music.jpg" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5>Music</h5>
+                        <p>Creative Hobby</p>
+                        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#music">Read
+                            More</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MODALS -->
+    <div class="modal fade" id="naruto">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-4">
+                <img src="naruto.jpg" class="img-fluid rounded mb-3">
+                <p>Naruto teaches hard work, friendship, and never giving up.</p>
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="blox">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-4">
+                <img src="bloxfuits.jpg" class="img-fluid rounded mb-3">
+                <p>Blox Fruits is inspired by anime with action adventure gameplay.</p>
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="cricket">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-4">
+                <img src="cricket.jpg" class="img-fluid rounded mb-3">
+                <p>Cricket builds teamwork, discipline, and fitness.</p>
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="music">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-4">
+                <img src="music.jpg" class="img-fluid rounded mb-3">
+                <p>Music helps relax and energize the mind.</p>
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SOUNDS -->
+    <audio id="hoverSound" src="hover.mp3"></audio>
+    <audio id="clickSound" src="click.mp3"></audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        /* SCROLL ANIMATION */
+        const cards = document.querySelectorAll(".card");
+        window.addEventListener("scroll", () => {
+            cards.forEach(card => {
+                const top = card.getBoundingClientRect().top;
+                if (top < window.innerHeight - 100) {
+                    card.classList.add("show");
+                }
+            });
+        });
+
+        /* SOUND EFFECTS */
+        const hover = document.getElementById("hoverSound");
+        const click = document.getElementById("clickSound");
+
+        document.querySelectorAll(".card").forEach(c => {
+            c.addEventListener("mouseenter", () => { hover.currentTime = 0; hover.play(); });
+        });
+        document.querySelectorAll("button").forEach(b => {
+            b.addEventListener("click", () => { click.currentTime = 0; click.play(); });
+        });
+    </script>
+
+</body>
+
+</html>
