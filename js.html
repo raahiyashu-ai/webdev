@@ -2,18 +2,24 @@
 <html>
 
 <head>
+    <title>JS Function</title>
 </head>
 
 <body>
-    <button onclick="int(67)">Execute JS function</button>
+
+    <h3>Multiplication using Function</h3>
+
     <script>
-        function int(x, y) {
-            if (y === undefined) {
-                y = 2
-            }
-            document.write(x * y)
+
+        function multiply(a, b) {
+            return a * b;
         }
+
+
+        let result = multiply(4, 5);
+        document.write("Result: " + result);
     </script>
+
 </body>
 
 </html>
