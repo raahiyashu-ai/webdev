@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS Methods & Loops</title>
+</head>
+
+<body>
+    <h3>JavaScript Methods and Loops</h3>
+
+    <p id="output"></p>
+
+    <script>
+
+        let text = "javascript";
+        let nums = [1, 2, 3];
+
+        let result = text.toUpperCase();
+        nums.push(4);
+
+        let display = "";
+
+        for (let i = 0; i < nums.length; i++) {
+            display += nums[i] + " ";
+        }
+
+
+        document.getElementById("output").innerHTML =
+            "Method Result: " + result + "<br>" +
+            "Loop Result: " + display;
+    </script>
+
+</body>
+
+</html>
