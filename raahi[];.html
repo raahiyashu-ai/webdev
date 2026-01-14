@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS Object - Sum of Arguments</title>
+</head>
+
+<body>
+
+    <h2>Sum of Arguments using Object</h2>
+    <p id="result"></p>
+
+    <script>
+
+        const calculator = {
+            sum: function (...nums) {
+                let total = 0;
+                for (let n of nums) {
+                    total += n;
+                }
+                return total;
+            }
+        };
+
+
+        let answer = calculator.sum(10, 20, 30, 40);
+
+        document.getElementById("result").innerHTML =
+            "Sum = " + answer;
+    </script>
+
+</body>
+
+</html>
