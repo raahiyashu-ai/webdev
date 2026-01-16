@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML DOM Example</title>
+</head>
+
+<body>
+
+    <h2>Accessing Value using HTML DOM</h2>
+
+    <input type="text" id="username" placeholder="Enter name">
+    <button onclick="getValue()">Click</button>
+
+    <p id="result"></p>
+
+    <script>
+        function getValue() {
+            let name = document.getElementById("username").value;
+            document.getElementById("result").innerHTML =
+                "You entered: " + name;
+        }
+    </script>
+
+</body>
+
+</html>
