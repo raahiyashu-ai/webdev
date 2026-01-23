@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <input id="a">
+    <input id="b">
+    <br><br>
+
+    <button onclick="calc('+')">+</button>
+    <button onclick="calc('-')">-</button>
+    <button onclick="calc('*')">*</button>
+    <button onclick="calc('/')">/</button>
+
+    <p id="r"></p>
+
+    <script>
+        function calc(op) {
+            let x = +a.value, y = +b.value;
+            r.innerHTML = eval(x + op + y);
+        }
+    </script>
+
+</body>
+
+</html>
