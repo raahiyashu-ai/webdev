@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <input id="n">
+  <button onclick="check()">Check</button>
+  <p id="o"></p>
+
+  <script>
+    function check() {
+      try {
+        if (n.value == "" || isNaN(n.value)) throw "Invalid input";
+        o.innerHTML = "Valid number";
+      } catch (e) {
+        o.innerHTML = "Error: " + e;
+      }
+    }
+  </script>
+
+</body>
+
+</html>
