@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        var choice = prompt("Welcome to are calculator.\n please enter your choice. \n1.Area of Rectangel. \n2.Area of Triangel.\n3. Area of Circle. \n4.Area of Parallelogram");
+        if (choice == '1') {
+            var l = prompt('Enter a Length')
+            var b = prompt('Enter a Breath')
+            var result = Number(l) * Number(b)
+            alert('The Area is ' + result)
+        }
+        if (choice == '2') {
+            var h = prompt('Enter a height')
+            var b = prompt('Enter a Base')
+            var result = Number(h) * Number(b) / 2
+            alert('The Area is ' + result)
+        }
+        if (choice == '3') {
+            var r = prompt('Enter a radius')
+            var result = 3.14 * Number(r) * Number(r)
+            alert('The Area is ' + result)
+        }
+        if (choice == '4') {
+            var h = prompt('Enter a height')
+            var cb = prompt('Enter a Corresponding Base')
+            var result = Number(h) * Number(cb)
+            alert('The Area is ' + result)
+        }
+    </script>
+</body>
+
+</html>
