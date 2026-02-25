@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Royal Galaxy Grand Hotel</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #0f172a;
+            color: white;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: linear-gradient(to right, #111827, #1e293b);
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #111;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: gold;
+            margin: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 40px;
+            display: none;
+            animation: fade 0.6s ease-in-out;
+        }
+
+        .active {
+            display: block;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero {
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            color: gold;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: gold;
+            color: black;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .gallery img {
+            width: 30%;
+            margin: 1%;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #1e293b;
+            margin: 8px 0;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 5px;
+        }
+
+        footer {
+            background: #111;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>Royal Galaxy Grand Hotel</h2>
+        <p>Experience Luxury Like Never Before</p>
+    </header>
+
+    <nav>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('gallery')">Gallery</a>
+        <a onclick="showPage('booking')">Bookings</a>
+        <a onclick="showPage('contact')">Contact</a>
+    </nav>
+
+    <!-- Home -->
+    <section id="home" class="active">
+        <div class="hero">
+            <h1>Welcome to Royal Galaxy</h1>
+            <p>5-Star Luxury | Infinity Pool | Spa | Fine Dining</p>
+            <button class="btn" onclick="showPage('booking')">Book Now</button>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery">
+        <div class="container gallery">
+            <h2>Our Luxury Spaces</h2>
+            <img src="https://picsum.photos/400/300?1">
+            <img src="https://picsum.photos/400/300?2">
+            <img src="https://picsum.photos/400/300?3">
+        </div>
+    </section>
+
+    <!-- Booking -->
+    <section id="booking">
+        <div class="container">
+            <h2>Reserve Your Stay</h2>
+            <input type="text" id="name" placeholder="Your Name">
+            <input type="date" id="date">
+            <button class="btn" onclick="addBooking()">Add Booking</button>
+
+            <h3>Your Reservations</h3>
+            <ul id="bookingList"></ul>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Email: contact@royalgalaxy.com</p>
+            <p>Phone: +91 90000 00000</p>
+            <p>Location: Bangalore, India</p>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Royal Galaxy Grand Hotel | All Rights Reserved
+    </footer>
+
+    <script>
+        function showPage(id) {
+            document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+            document.getElementById(id).classList.add("active");
+        }
+
+        function addBooking() {
+            let name = document.getElementById("name").value;
+            let date = document.getElementById("date").value;
+
+            if (name === "" || date === "") {
+                alert("Please fill all fields!");
+                return;
+            }
+
+            let li = document.createElement("li");
+            li.innerHTML = `${name} - ${date}
+        <button class="btn" onclick="removeBooking(this)">Remove</button>`;
+
+            document.getElementById("bookingList").appendChild(li);
+
+            document.getElementById("name").value = "";
+            document.getElementById("date").value = "";
+        }
+
+        function removeBooking(btn) {
+            btn.parentElement.remove();
+        }
+    </script>
+
+</body>
+
+</html>
