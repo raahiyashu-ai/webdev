@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Capstone Project - Add Numbers</title>
+</head>
+
+<body style="text-align:center;font-family:Arial">
+
+    <h2>Add Numbers</h2>
+
+    <input type="number" id="n1" placeholder="Enter first number"><br><br>
+    <input type="number" id="n2" placeholder="Enter second number"><br><br>
+
+    <button onclick="add()">Add</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function add() {
+            let a = Number(document.getElementById("n1").value);
+            let b = Number(document.getElementById("n2").value);
+            document.getElementById("result").innerHTML = "Result: " + (a + b);
+        }
+    </script>
+
+</body>
+
+</html>
