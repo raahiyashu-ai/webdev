@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Website with Contact</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin: 0
+        }
+
+        section {
+            display: none;
+            padding: 50px;
+            height: 100vh
+        }
+
+        #home {
+            background: #aee
+        }
+
+        #about {
+            background: #afa
+        }
+
+        #contact {
+            background: #faa
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 10px
+        }
+
+        input,
+        textarea {
+            padding: 8px;
+            margin: 5px;
+            width: 200px
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>My Website</h2>
+
+    <button onclick="show('home')">Home</button>
+    <button onclick="show('about')">About</button>
+    <button onclick="show('contact')">Contact Us</button>
+
+    <section id="home">
+        <h1>Home</h1>
+        <p>Welcome to my website</p>
+    </section>
+
+    <section id="about">
+        <h1>About</h1>
+        <p>This is about page</p>
+    </section>
+
+    <section id="contact">
+        <h1>Contact Us</h1>
+
+        <input type="text" placeholder="Your Name"><br>
+        <input type="email" placeholder="Your Email"><br>
+        <textarea placeholder="Your Message"></textarea><br>
+        <button>Send</button>
+
+    </section>
+
+    <script>
+        function show(id) {
+            document.getElementById("home").style.display = "none";
+            document.getElementById("about").style.display = "none";
+            document.getElementById("contact").style.display = "none";
+
+            document.getElementById(id).style.display = "block";
+        }
+
+        show("home");
+    </script>
+
+</body>
+
+</html>
